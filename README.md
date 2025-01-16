@@ -1,3 +1,10 @@
+# Build and push to Docker Hub
+
+```
+sudo docker build --no-cache --build-arg ADDITIONAL_LIBS_PATH=./additional_libs --push -t shanebowyer/geoserver:noble .
+
+```
+
 # A GeoServer docker image
 
 This Dockerfile can be used to create images for all geoserver versions since 2.5.
