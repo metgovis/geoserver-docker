@@ -1,4 +1,5 @@
-FROM tomcat:9.0.98-jdk17-temurin-jammy@sha256:1f35364892e7d90cc6ccbfe23b03d84791fbaaf4197171ea3cdac6672983de2f
+# FROM tomcat:9.0.98-jdk17-temurin-jammy@sha256:1f35364892e7d90cc6ccbfe23b03d84791fbaaf4197171ea3cdac6672983de2f
+FROM tomcat:9.0.98-jdk17-temurin-noble
 LABEL vendor="osgeo.org"
 
 # Build arguments
@@ -17,6 +18,11 @@ ARG STABLE_PLUGIN_URL=https://downloads.sourceforge.net/project/geoserver/GeoSer
 ARG WAR_ZIP_URL=https://downloads.sourceforge.net/project/geoserver/GeoServer/${GS_VERSION}/geoserver-${GS_VERSION}-war.zip
 
 # Environment variables
+##sb
+ENV GEOSERVER_CSRF_DISABLE=false
+ENV GEOSERVER_CSRF_WHITELIST='geoserver.metweb.co.za'
+##sb
+
 ENV ADDITIONAL_FONTS_DIR=/opt/additional_fonts/
 ENV ADDITIONAL_LIBS_DIR=/opt/additional_libs/
 ENV CATALINA_HOME=$CATALINA_HOME
