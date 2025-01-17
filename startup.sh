@@ -103,6 +103,9 @@ fi
 # if enabled, this will add the filter definitions
 # to the end of the web.xml
 # (this will only happen if our filter has not yet been added before)
+##sb
+CORS_ENABLED="true"
+##sb
 if [ "${CORS_ENABLED}" = "true" ]; then
   if ! grep -q DockerGeoServerCorsFilter "$CATALINA_HOME/webapps/geoserver/WEB-INF/web.xml"; then
     echo "Enable CORS for $CATALINA_HOME/webapps/geoserver/WEB-INF/web.xml"
